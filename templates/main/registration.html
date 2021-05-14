@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="{% static 'main/css/main2.css' %}">
+    <title>Регистрация</title>
+</head>
+<body>
+    <ul class="data data_reg">
+        <li><i class="fas fa-id-card icon"></i><label><input type="text" placeholder="Фамилия"></label></li>
+        <li><i class="fas fa-id-card icon"></i><label><input type="text" placeholder="Имя"></label></li>
+        <li><i class="fas fa-id-card icon"></i><label><input type="text" placeholder="Отчество"></label></li>
+        <li><i class="far fa-envelope icon"></i><label><input type="text" placeholder="Почта"></label></li>
+        <li><i class="fas fa-ghost icon"></i><label><input type="text" placeholder="Логин"></label></li>
+        <li><i class="fas fa-lock icon"></i><label><input type="text" placeholder="Пароль"></label></li>
+        <li><i class="fas fa-venus-mars icon"></i><label>
+            <select name="gender">
+                <option>gender</option>
+                <option value="m">male</option>
+                <option value="f">female</option>
+            </select>
+        </label></li>
+        <li>
+            <i class="far fa-calendar-alt"></i><label><input type="date" class="date"></label>
+        </li>
+    </ul>
+    <div class="continue"><a href="{% url 'video_link' %}" class="btn btn-primary btn-lg continue_button">Продолжить</a></div>
+</body>
+</html>
