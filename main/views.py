@@ -1,13 +1,17 @@
 from django.shortcuts import render
 from rest_framework import generics
+from .models import User
+from.sterializers import UserSerializer
+
+
+class UserView(generics.ListAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
 
 # СТРАНИЦЫ СОЗДАННЫЕ ПРИ ИЗУЧЕНИИ DJANGO
 def index(request):
     return render(request, 'main/index.html')
-
-
-def about(request):
-    return render(request, 'main/about.html')
 
 
 def instruction(request):
