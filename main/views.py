@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import generics
-from .models import User
-from.sterializers import UserSerializer
+from .models import User, VideoInformation, DataAboutUserAndVideo
+from.sterializers import UserSerializer, VideoInformationSerializer, DataAboutUserAndVideoSerializer
 
 
 class UserView(generics.ListAPIView):
@@ -9,11 +9,23 @@ class UserView(generics.ListAPIView):
     serializer_class = UserSerializer
 
 
+class VideoInformationSerializerView(generics.CreateAPIView):
+    queryset = VideoInformation.objects.all()
+    serializer_class = VideoInformationSerializer
+
+
+class DataAboutUserAndVideoSerializerView(generics.CreateAPIView):
+    queryset = DataAboutUserAndVideo.objects.all()
+    serializer_class = DataAboutUserAndVideoSerializer
+
+
 # СТРАНИЦЫ СОЗДАННЫЕ ПРИ ИЗУЧЕНИИ DJANGO
 def index(request):
     return render(request, 'main/index.html')
 
 
+def about(request):
+    return render(request, 'main/about.html')
 
 
 def instruction(request):
