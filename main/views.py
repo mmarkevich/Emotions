@@ -14,6 +14,8 @@ def index(request):
     return render(request, 'main/index.html')
 
 
+
+
 def instruction(request):
     return render(request, 'main/instruction.html')
 
