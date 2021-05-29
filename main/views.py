@@ -36,3 +36,4 @@ def video_list(request):
 
 def video(request):
     return render(request, 'main/video.html')
+
