@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from .models import User
-from .models import VideoInformation
-from .models import DataAboutUserAndVideo
+from DB.models import User
+from DB.models import VideoInformation
+from DB.models import DataAboutUserAndVideo
 
 
 class UserSerializer(serializers.ModelSerializer):
