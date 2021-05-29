@@ -1,22 +1,4 @@
 from django.shortcuts import render
-from rest_framework import generics
-from .models import User, VideoInformation, DataAboutUserAndVideo
-from.sterializers import UserSerializer, VideoInformationSerializer, DataAboutUserAndVideoSerializer
-
-
-class UserView(generics.ListAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-
-
-class VideoInformationSerializerView(generics.CreateAPIView):
-    queryset = VideoInformation.objects.all()
-    serializer_class = VideoInformationSerializer
-
-
-class DataAboutUserAndVideoSerializerView(generics.CreateAPIView):
-    queryset = DataAboutUserAndVideo.objects.all()
-    serializer_class = DataAboutUserAndVideoSerializer
 
 
 # СТРАНИЦЫ СОЗДАННЫЕ ПРИ ИЗУЧЕНИИ DJANGO
@@ -46,6 +28,10 @@ def enter(request):
 # ВИДЕО
 def video_link(request):
     return render(request, 'main/video_link.html')
+
+
+def video_list(request):
+    return render(request, 'main/video_list.html')
 
 
 def video(request):
