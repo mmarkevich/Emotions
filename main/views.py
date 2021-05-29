@@ -50,3 +50,4 @@ def video_link(request):
 
 def video(request):
     return render(request, 'main/video.html')
+
