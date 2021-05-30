@@ -50,7 +50,7 @@ class VideoCamera(object):
 			sec += 1
 
 			if sec % 5 == 0 and sec > 4:
-				#TODO zagruzka dominant emotion v data basy
+				#TODO zagruzka dominant emotion v DB
 
 			cv2.putText(cap_img, predicted_emotion, (x, y), cv2.FONT_HERSHEY_SIMPLEX, 1, (200, 0, 0), 3,
 						cv2.LINE_AA)
