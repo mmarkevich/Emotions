@@ -5,6 +5,8 @@ from keras.models import model_from_json
 from keras.preprocessing import image
 from keras.preprocessing.image import img_to_array
 import copy
+import time
+
 
 model = model_from_json(open("C:/Users/Asus/PycharmProjects/Emot/streamapp/fer2013_model6.json", "r").read())
 model.load_weights('C:/Users/Asus/PycharmProjects/Emot/streamapp/fer2013_model6.h5')
@@ -26,7 +28,7 @@ class VideoCamera(object):
 		# We are using Motion JPEG, but OpenCV defaults to capture raw images,
 		# so we must encode it into JPEG in order to correctly display the
 		# video stream.
-
+		sec = 0
 		gray = cv2.cvtColor(cap_img, cv2.COLOR_BGR2GRAY)
 		faces_detected = face_detection_videocam.detectMultiScale(gray, scaleFactor=1.3, minNeighbors=5)
 		for (x, y, w, h) in faces_detected:
@@ -41,7 +43,14 @@ class VideoCamera(object):
 
 			res = np.argmax(predictions[0])
 
+
 			predicted_emotion = emotions[res]
+
+			time.sleep(1)
+			sec += 1
+
+			if sec % 5 == 0 and sec > 4:
+				#TODO zagruzka dominant emotion v data basy
 
 			cv2.putText(cap_img, predicted_emotion, (x, y), cv2.FONT_HERSHEY_SIMPLEX, 1, (200, 0, 0), 3,
 						cv2.LINE_AA)
