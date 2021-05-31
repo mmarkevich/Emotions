@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Video</title>
+    <link rel="stylesheet" href="{% static 'main/css/main2.css' %}">
+</head>
+<body>
+
+{% for el in link %}
+     <iframe width="560" height="315" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+             src="{{ el.link }}" ></iframe>
+{% endfor %}
+
+</body>
+</html>

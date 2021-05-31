@@ -1,4 +1,4 @@
-from .models import User
+from .models import User, VideoInformation
 from django.forms import ModelForm, TextInput, NumberInput, CheckboxInput, PasswordInput
 
 
@@ -18,7 +18,7 @@ class UserForm(ModelForm):
             }),
             "age": NumberInput(attrs={
                 'class': 'data data_reg',
-                'placeholder': 'Возраст',
+                'placeholder': 'Age',
             }),
             "male": CheckboxInput(attrs={
                 'class': 'data data_reg',
@@ -29,3 +29,5 @@ class UserForm(ModelForm):
                 'placeholder': 'жен',
             })
         }
+
+

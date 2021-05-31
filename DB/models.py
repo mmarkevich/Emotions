@@ -12,6 +12,9 @@ class User(models.Model):
 class VideoInformation(models.Model):
     link = models.CharField(max_length=800)
 
+    def __str__(self):
+        return self.link
+
 
 class DataAboutUserAndVideo(models.Model):
     ID_user = models.IntegerField(null=False, default=False)
@@ -27,3 +30,7 @@ class DataAboutUserAndVideo(models.Model):
     angry = models.IntegerField(null=False, default=False)
     dominant_emotion = models.CharField(max_length=50)
     edited_dominant_emotion = models.CharField(max_length=50)
+
+
+class DominantEmotion(models.Model):
+    dominant_emotion = models.CharField(max_length=15)

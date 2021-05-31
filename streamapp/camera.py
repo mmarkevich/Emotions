@@ -6,8 +6,8 @@ from keras.preprocessing import image
 from keras.preprocessing.image import img_to_array
 import copy
 
-model = model_from_json(open("C:/Users/Asus/PycharmProjects/Emot/streamapp/fer2013_model6.json", "r").read())
-model.load_weights('C:/Users/Asus/PycharmProjects/Emot/streamapp/fer2013_model6.h5')
+model = model_from_json(open("/Users/andreimarkevich/PycharmProjects/FallbackOptionforFER/streamapp/fer2013_model6.json", "r").read())
+model.load_weights('/Users/andreimarkevich/PycharmProjects/FallbackOptionforFER/streamapp/fer2013_model6.h5')
 
 face_detection_videocam = cv2.CascadeClassifier(os.path.join(
 			settings.BASE_DIR,'opencv_haarcascade_data/haarcascade_frontalface_default.xml'))
