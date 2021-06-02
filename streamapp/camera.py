@@ -4,6 +4,7 @@ from django.conf import settings
 from keras.models import model_from_json
 from keras.preprocessing import image
 from keras.preprocessing.image import img_to_array
+from DB.models import DataAboutUserAndVideo
 import copy
 import time
 
@@ -50,9 +51,10 @@ class VideoCamera(object):
 			sec += 1
 
 			if sec % 5 == 0 and sec > 4:
-				#TODO zagruzka dominant emotion v DB
+				a = DataAboutUserAndVideo(ID_user = 2, ID_screenshot=3, ID_video_information=3, dominant_emotion=predicted_emotion, edited_dominant_emotion=predicted_emotion)
+				a.save()
 
-			cv2.putText(cap_img, predicted_emotion, (x, y), cv2.FONT_HERSHEY_SIMPLEX, 1, (200, 0, 0), 3,
+				cv2.putText(cap_img, predicted_emotion, (x, y), cv2.FONT_HERSHEY_SIMPLEX, 1, (200, 0, 0), 3,
 						cv2.LINE_AA)
 #		frame_flip = cv2.flip(cap_img, 1)
 		ret, jpeg = cv2.imencode('.jpg', cap_img)

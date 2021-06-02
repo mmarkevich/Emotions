@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from rest_framework import generics
-from .models import User, VideoInformation, DataAboutUserAndVideo, DominantEmotion
-from DB.sterializers import UserSerializer, VideoInformationSerializer, DataAboutUserAndVideoSerializer, DominantEmotionSerializer
+from .models import User, VideoInformation, DataAboutUserAndVideo
+from DB.sterializers import UserSerializer, VideoInformationSerializer, DataAboutUserAndVideoSerializer
 from .forms import UserForm
+
 
 
 class UserView(generics.ListAPIView):
@@ -19,10 +20,6 @@ class DataAboutUserAndVideoSerializerView(generics.CreateAPIView):
     queryset = DataAboutUserAndVideo.objects.all()
     serializer_class = DataAboutUserAndVideoSerializer
 
-
-class DominantEmotionView(generics.CreateAPIView):
-    queryset = DominantEmotion.objects.all()
-    serializer_class = DominantEmotionSerializer
 
 
 def registration(request):

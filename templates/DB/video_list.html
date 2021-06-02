@@ -7,11 +7,13 @@
     <link rel="stylesheet" href="{% static 'main/css/main2.css' %}">
 </head>
 <body>
+<a href="{% url 'logout1' %}" class="btn btn-primary btn-lg continue_button">Выход</a><br>
 
 {% for el in link %}
      <iframe width="560" height="315" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
              src="{{ el.link }}" ></iframe>
 {% endfor %}
+{{ request.user }}
 
 </body>
 </html>

@@ -17,11 +17,11 @@ def instruction(request):
 def login(request):
     return render(request, 'main/login.html')
 
-
+# ТЕСТОВЫЙ РЕГИСТРАЦИОННЫЙ ШАБЛОН
 def registration(request):
     return render(request, 'main/registration.html')
 
-
+#ТЕСТОВЫЙ ВХОД В СИСТЕМУ
 def enter(request):
     return render(request, 'main/enter.html')
 

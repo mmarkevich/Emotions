@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from DB.models import User, DataAboutUserAndVideo, VideoInformation, DominantEmotion
+from DB.models import User, DataAboutUserAndVideo, VideoInformation
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -19,8 +19,3 @@ class DataAboutUserAndVideoSerializer(serializers.ModelSerializer):
         fields = ('id', 'ID_user', 'ID_video_information', 'ID_screenshot', 'second',
                   'neutral', 'disgust', 'sad', 'happy', 'fear', 'disgust', 'angry', 'dominant_emotion', 'edited_dominant_emotion')
 
-
-class DominantEmotionSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = DominantEmotion
-        fields = ('id', 'dominant_emotion')
