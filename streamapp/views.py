@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http.response import StreamingHttpResponse
 from streamapp.camera import VideoCamera
-
+import time
+from DB.models import DataAboutUserAndVideo
 
 def index(request):
 	return render(request, 'streamapp/home.html')

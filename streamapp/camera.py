@@ -5,12 +5,10 @@ from keras.models import model_from_json
 from keras.preprocessing import image
 from keras.preprocessing.image import img_to_array
 from DB.models import DataAboutUserAndVideo
-import copy
 import time
-from PIL import Image
 
-model = model_from_json(open(r"C:\Users\Asus\PycharmProjects\Emotions4\streamapp\fer2013_model6.json", "r").read())
-model.load_weights(r'C:\Users\Asus\PycharmProjects\Emotions4\streamapp\fer2013_model6.h5')
+model = model_from_json(open(r"/Users/andreimarkevich/PycharmProjects/FallbackOptionforFER/streamapp/fer2013_model6.json", "r").read())
+model.load_weights(r'/Users/andreimarkevich/PycharmProjects/FallbackOptionforFER/streamapp/fer2013_model6.h5')
 
 face_detection_videocam = cv2.CascadeClassifier(os.path.join(
 			settings.BASE_DIR,'opencv_haarcascade_data/haarcascade_frontalface_default.xml'))
@@ -48,15 +46,12 @@ class VideoCamera(object):
 
 			predicted_emotion = emotions[res]
 
-
-
-
 			cv2.putText(cap_img, predicted_emotion, (x, y), cv2.FONT_HERSHEY_SIMPLEX, 1, (200, 0, 0), 3,cv2.LINE_AA)
 #		frame_flip = cv2.flip(cap_img, 1)
 		ret, jpeg = cv2.imencode('.jpg', cap_img)
 
 		return jpeg.tobytes()
 	def throwData(self):
-		a = DataAboutUserAndVideo(ID_user=2, ID_screenshot=3, ID_video_information=3,
+		a = DataAboutUserAndVideo(ID_user=2, ID_video_information=3,
 								  dominant_emotion=predicted_emotion, edited_dominant_emotion=predicted_emotion)
 		a.save()
