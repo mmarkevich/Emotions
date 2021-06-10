@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.forms import ModelForm, TextInput, NumberInput, CheckboxInput, PasswordInput
 
 
+# forms.py
 class AuthUserForm(AuthenticationForm, forms.ModelForm):
     class Meta:
         model = User

@@ -1,10 +1,10 @@
 from rest_framework import serializers
-from DB.models import  DataAboutUserAndVideo, VideoInformation
+from DB.models import  DataAboutUserAndVideo, DB_VideoInformation
 
 
 class VideoInformationSerializer(serializers.ModelSerializer):
     class Meta:
-        model = VideoInformation
+        model = DB_VideoInformation
         fields = ('id', 'link')
 
 

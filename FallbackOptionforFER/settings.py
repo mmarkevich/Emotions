@@ -89,6 +89,7 @@ WSGI_APPLICATION = 'FallbackOptionforFER.wsgi.application'
 #     }
 # }
 
+#settings.py
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',

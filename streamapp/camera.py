@@ -51,6 +51,8 @@ class VideoCamera(object):
 		ret, jpeg = cv2.imencode('.jpg', cap_img)
 
 		return jpeg.tobytes()
+
+
 	def throwData(self):
 		a = DataAboutUserAndVideo(ID_user=2, ID_video_information=3,
 								  dominant_emotion=predicted_emotion, edited_dominant_emotion=predicted_emotion)

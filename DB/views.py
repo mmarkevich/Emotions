@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from rest_framework import generics
-from .models import VideoInformation, DataAboutUserAndVideo
+from .models import DB_VideoInformation, DataAboutUserAndVideo
 from DB.sterializers import VideoInformationSerializer, DataAboutUserAndVideoSerializer
 from django.shortcuts import render
 from django.http.response import StreamingHttpResponse
@@ -9,7 +9,7 @@ import time
 
 
 class VideoInformationSerializerView(generics.ListAPIView):
-    queryset = VideoInformation.objects.all()
+    queryset = DB_VideoInformation.objects.all()
     serializer_class = VideoInformationSerializer
 
 
@@ -39,6 +39,6 @@ def video_feed(request):
 
 
 def video_list(request):
-    link = VideoInformation.objects.all()
+    link = DB_VideoInformation.objects.all()
 
     return render(request, 'DB/video_list.html', {'link': link})

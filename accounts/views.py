@@ -3,7 +3,7 @@ from django.contrib.auth.views import LoginView, LogoutView
 from .forms import AuthUserForm
 from .forms import UserForm
 
-
+# views.py
 class FerLoginView(LoginView):
     template_name = 'login_page.html'
     form_class = AuthUserForm
@@ -33,3 +33,4 @@ def registration1(request):
 
 class FerLogoutView(LogoutView):
     next_page = ('log_in')
+

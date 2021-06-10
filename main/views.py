@@ -2,16 +2,16 @@ from django.shortcuts import render
 
 
 # СТРАНИЦЫ СОЗДАННЫЕ ПРИ ИЗУЧЕНИИ DJANGO
-def index(request):
-    return render(request, 'main/index.html')
-
-
-def about(request):
-    return render(request, 'main/about.html')
-
-
-def instruction(request):
-    return render(request, 'main/instruction.html')
+# def index(request):
+#     return render(request, 'main/index.html')
+#
+#
+# def about(request):
+#     return render(request, 'main/about.html')
+#
+#
+# def instruction(request):
+#     return render(request, 'main/instruction.html')
 
 # РЕГИСТРАЦИЯ И ВХОД В СИСТЕМУ
 def login(request):
